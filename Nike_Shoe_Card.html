@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Card</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+            font-family: sans-serif;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #131313;
+        }
+        .container{
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+        .container .card{
+            position: relative;
+            width: 320px;
+            height: 450px;
+            background: #232323;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .container .card::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: #9bd628;
+            clip-path: circle(150px at 80% 20%);
+            transition: 0.5s ease-in-out;
+        }
+        .container .card:hover:before{
+            clip-path: circle(300px at 80% -20%);
+        }
+        .container .card::after{
+            content: "Nike";
+            position: absolute;
+            top: 30%;
+            left: -20%;   
+            font-size: 12em;
+            font-weight: 800;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.04);
+        }
+        .container .card .imgBx{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            z-index: 1000;
+            height: 220px;
+            transition: 0.5s;
+        }
+        .container .card:hover .imgBx{
+            top: 0%;
+            transform: translateY(0%);
+        }
+        .container .card .imgBx img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: scaleX(-1);
+            transform: translate(-50%,-50%) scaleX(-1) rotate(25deg);
+            width: 170px;
+        }
+        .container .card .content{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100px;
+            text-align: center;
+            transition: 1s;
+            z-index: 100;
+        }
+        .container .card:hover .content{
+            height: 210px;
+
+        }
+        .container .card .content h2{
+            position: relative;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+        .container .card .content .color,
+        .container .card .content .size{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 20px;
+            transition: 0.5s;
+            opacity: 0;
+            visibility: hidden;
+        }
+        .container .card:hover .content .size{
+            opacity: 1;
+            visibility: visible;
+            transition-delay: 0.5s;
+
+        }
+        .container .card:hover .content .color{
+            opacity: 1;
+            visibility: visible;
+            transition-delay: 0.6s;
+
+        }
+        .container .card .content .color h3,
+        .container .card .content .size h3{
+            color: #fff;
+            font-weight: 300;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-right: 10px;            
+        }
+        .container .card .content .size span{
+            width: 26px;
+            height: 26px;
+            text-align: center;
+            line-height: 26px;
+            font-size: 16px;
+            display: inline-block;
+            color: #111;
+            margin: 0 5px;
+            transition: 0.5s;
+            background: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .container .card .content .size span:hover{
+            background: #9bd628;
+
+        }
+        .container .card .content .color span{
+            position: relative;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #ff0;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        .container .card .content .color span:nth-child(2){
+            background: #9bd628;
+        }
+        .container .card .content .color span:nth-child(3){
+            background: #03a9f4;
+        }
+        .container .card .content .color span:nth-child(4){
+            background: #e91e63;
+        }
+        .container .card .content a{
+            display: inline-block;
+            padding: 10px 20px;
+            background: #fff;
+            border-radius: 4px;
+            margin-top: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            color: #111;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: 0.5s;            
+        }
+        .container .card:hover .content a{
+            opacity: 1;
+            transform: translateY(0px);
+            transition-delay: 0.75s;
+        }
+        </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="imgBx">
+                <img src="assets/shoe.png" alt="">
+            </div>
+            <div class="content">
+                <h2>Nike Shoe</h2>
+                <div class="size">
+                    <h3>Size: </h3>
+                    <span>7</span>
+                    <span>8</span>
+                    <span>9</span>
+                    <span>10</span>
+                </div>
+                <div class="color">
+                    <h3>Color: </h3>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <a href="">Buy Now</a>
+            </div>
+        </div>    
+    </div>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industry</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        header{
+            position: absolute;
+            padding: 10px;
+            top: 0;
+            left: 0;
+            right: 0;
+            min-width: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #111;
+            z-index: 1000;
+        }
+        header .logo{
+            color: #fff;
+            font-size: 1.2em;
+            font-weight: 300;
+            margin-left: 5px;
+            text-decoration: none;
+        }
+        header .toggle{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        header .toggle img{
+            max-width: 25px;
+            opacity: 0.5;
+        }
+        header .toggle span{
+            color: #fff;
+            opacity: 0.5;
+            font-size: 1em;
+            margin: 1px;
+            padding: 0 10px;
+        }
+
+        header .toggle img:hover,
+        header .toggle span:hover{
+            opacity: 1;
+        }
+        section{
+            padding: 100px;
+            position: relative;
+        }
+        .banner{
+            position: relative;
+            width: 100%;
+            min-width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .banner img{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            min-height: 100%;
+            opacity: 0.8;
+            object-fit: cover;
+            background-repeat: no-repeat;
+        }
+        .cover{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            background: linear-gradient(135deg,rgba(255,0,0,0.7) 0%,  rgba(255,0,0,0) 74%)
+        }
+        .banner .content{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+        }
+        .banner .content h2{
+            text-align: center;
+            color: #fff;
+            font-size: 4em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+        .banner .content p{
+            color: #fff;
+            letter-spacing: 1px;
+            font-size: 1.3em;
+            text-align: center;
+            opacity: 0.5;
+        }
+        .banner_2{
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .banner_2_bg{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            min-height: 100%;
+            opacity: 0.8;
+            z-index: -1;
+            object-fit: cover;
+            background-repeat: no-repeat;
+        }
+        .banner .contentBx{
+            margin-bottom: 20px;
+        }
+        .banner .contentBx h2{
+            text-align: center;
+            color: #111;
+            font-size: 2em;
+            opacity: 0.5;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+            max-width: 900px;
+            margin: auto;
+        }
+        .banner .contentBx p{
+            color: #111;
+            letter-spacing: 1px;
+            font-size: 1em;
+            text-align: center;
+            opacity: 0.5;
+            max-width: 900px;
+            margin: auto;
+
+        }
+        .cardBx{
+            display: flex;
+            width: 100%;
+            min-height: 100%;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .cardBx .card{
+            height: 350px;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid gray;
+            margin-bottom: 50px;
+            margin-right: 10px;
+        }
+        .cardBx .card .imgBx {
+            height: 50%;
+            width: 100%;
+            min-height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .cardBx .card .imgBx img{
+            position: static;
+            opacity: 1;            
+            width: auto;
+            height: auto;
+            min-height: auto;
+            cursor: pointer;
+        }
+        .card .cont{
+            width: 100%;
+            height: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .card .cont h2{
+            color: #111;
+            opacity: 0.5;
+            font-size: 1.8em;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        .card .cont p{
+            text-align: center;
+            color: #111;
+            opacity: 0.8;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Industrious</a>
+        <div class="toggle">
+            <img src="assets/Nike/menu.png" alt="">
+            <span>Menu</span>
+        </div>
+    </header>
+    <section class="banner">
+        <img src="assets/background1.jpg" alt="">
+        <div class="cover"></div>
+        <div class="content">
+            <h2>Industrious</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit veniam vel tempore aperiam magnam enim distinctio repellat provident? Hic, a?</p>
+        </div>
+    </section>
+    <section class="banner banner_2">
+        <img  class="banner_2_bg" src="assets/white_bg.jpg" alt="">
+        <div class="contentBx">
+            <h2>Lorem ipsum dolor sit amet.</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, inventore aspernatur. Enim pariatur iure, numquam blanditiis, illo culpa ut ipsam esse .</p>
+        </div>
+        <div class="cardBx">
+            <div class="card">
+                <div class="imgBx">
+                    <img src="assets/Destination/facebook.png" alt="">
+                </div>
+                <div class="cont">
+                    <h2>Lorem ipsum.</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, provident
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, provident.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="imgBx">
+                    <img src="assets/Destination/facebook.png" alt="">
+                </div>
+                <div class="cont">
+                    <h2>Lorem ipsum.</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, provident
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, provident.</p>
+                </div>
+            </div> 
+
+            <div class="card">
+                <div class="imgBx">
+                    <img src="assets/Destination/facebook.png" alt="">
+                </div>
+                <div class="cont">
+                    <h2>Lorem ipsum.</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, provident
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, provident.</p>
+                </div>
+            </div> 
+
+            <div class="card">
+                <div class="imgBx">
+                    <img src="assets/Destination/facebook.png" alt="">
+                </div>
+                <div class="cont">
+                    <h2>Lorem ipsum.</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, provident
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, provident.</p>
+                </div>
+            </div> 
+
+            <div class="card">
+                <div class="imgBx">
+                    <img src="assets/Destination/facebook.png" alt="">
+                </div>
+                <div class="cont">
+                    <h2>Lorem ipsum.</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, provident
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, provident.</p>
+                </div>
+            </div> 
+
+            <div class="card">
+                <div class="imgBx">
+                    <img src="assets/Destination/facebook.png" alt="">
+                </div>
+                <div class="cont">
+                    <h2>Lorem ipsum.</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, provident
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, provident.</p>
+                </div>
+            </div> 
+            
+        </div>
+    </section>
+</body>
+</html>

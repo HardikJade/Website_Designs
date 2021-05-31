@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pepsi Landing Page</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        section{
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background:#0062be;
+            padding: 100px;
+            transition: 0.5s;
+        }
+        header{
+            position: absolute;
+            top: 0;
+            left:0;
+            width: 100%;
+            padding: 20px 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header .logo{
+            position: relative;
+            max-width: 80px;
+        }
+        header ul{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;    
+        }
+        header ul li{
+            list-style: none;
+        }
+        header ul li a{
+            list-style: none;
+            font-weight: 400;
+            margin-left: 40px;
+            color: white;
+            text-decoration: none;
+        }
+        .content{
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .content .textBox{
+            position: relative;
+            max-width: 600px;
+        }
+        .content .textBox h2{
+            color: white;
+            font-size: 4em;
+            line-height: 1.5em;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+        .content .textBox h2 span{
+            font-size: 2em;
+        }
+        .content .textBox p{
+            color: white;
+        }
+        .content .textBox a{
+            display: inline-block;                
+            margin-top: 20px;
+            text-decoration: none;
+            background: white;
+            font-weight: 500;
+            padding: 10px 20px;
+            color: black;
+            border-radius: 40px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .content .imgBox{
+            width: 600px;
+            display: flex;
+            padding-right: 50px;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .content .imgBox img{
+            max-width: 600px;
+            transform: scale(0.9);
+        }
+        .thumb{
+            position: absolute;
+            left: 50%;
+            bottom: 5%;
+            transform: translate(-50%);
+            display: flex;
+        }
+        .thumb li{
+            margin: 0 20px;
+            list-style: none;
+            display: inline-block;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        .thumb li img:hover{
+            transform: translateY(-20px);
+        }
+        .thumb li img{
+            max-width: 40px;
+        }
+        .sci{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            left: 0;
+            transform: translateX(100%);
+        }
+        .sci li{
+            position: relative;
+            list-style: none;
+            padding: 10px;
+        }
+        .sci li img{
+            filter: invert(1);
+            transform: scale(0.9);
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <header>
+            <a href="#"><img src="assets/Pepsi/logo.png" class="logo"></a>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Whats New</a></li>
+                <li><a href="#">News Letter</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </header>
+        <div class="content">
+            <div class="textBox">
+                <h2>That's What<br><span>I Like</span></h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore, nihil? Assumenda recusandae tenetur sed ratione dignissimos necessitatibus quasi commodi quam veritatis ipsum quisquam vel, ducimus tempore, ut eaque accusantium ullam.</p>
+                <a href="#">View All Products</a>
+            </div>
+            <div class="imgBox">
+                <img src="assets/Pepsi/pepsi001.png" class="pepsi">
+            </div>
+        </div>
+        <ul class="thumb">
+            <li><img src="assets/Pepsi/pepsi001.png"></li>
+            <li><img src="assets/Pepsi/pepsi002.png"></li>
+            <li><img src="assets/Pepsi/pepsi003.png"></li>
+        </ul>
+        <ul class="sci">
+            <li><a href="#"><img src="assets/Pepsi/facebook.png"></a></li>
+            <li><a href="#"><img src="assets/Pepsi/twitter.png"></a></li>
+            <li><a href="#"><img src="assets/Pepsi/instagram.png"></a></li>
+        </ul>
+    </section>
+    <script>
+        let pepsi_1 = document.getElementsByClassName("thumb")[0].childNodes[1]
+        let pepsi_2 = document.getElementsByClassName("thumb")[0].childNodes[3]
+        let pepsi_3 = document.getElementsByClassName("thumb")[0].childNodes[5]
+        let sec = document.getElementsByTagName("section")[0]
+        let content = document.getElementsByClassName("content")[0].children[1]
+            pepsi_1.addEventListener("click",function(){
+            sec.style.background = "#0062be"
+            content.innerHTML = '<img src="assets/Pepsi/pepsi001.png" class="pepsi">'
+        })
+        
+        pepsi_2.addEventListener("click",function(){
+            sec.style.background = "red"
+            content.innerHTML = '<img src="assets/Pepsi/pepsi002.png" class="pepsi">'
+        })
+        
+        pepsi_3.addEventListener("click",function(){
+            sec.style.background = "black"
+            content.innerHTML = '<img src="assets/Pepsi/pepsi003.png" class="pepsi">'
+        })
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+        }
+        
+        nav {
+            width: 100%;
+            background: blueviolet;
+        }
+        
+        ul {
+            width: 80%;
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        ul li {
+            list-style: none;
+            display: inline-block;
+            padding: 20px;
+        }
+        
+        ul li:hover {
+            background: #e91e63;
+        }
+        
+        ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .toggle {
+            width: 100%;
+            padding: 10px 20px;
+            background: #001f44;
+            box-sizing: border-box;
+            color: white;
+            text-align: right;
+            font-size: 30px;
+            display: none;
+        }
+        
+        @media(max-width: 768px) {
+            .toggle {
+                display: block;
+            }
+            ul {
+                width: 100%;
+                display: none;
+            }
+            ul li {
+                display: block;
+            }
+            .active {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="toggle">
+            <div class="menu"><i class="fa fa-bars" aria-hidden="true"></i></div>
+        </div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About Us</a></li>
+        </ul>
+    </nav>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.menu ').click(function() {
+                $('ul').toggleClass('active');
+            })
+        })
+    </script>
+</body>
+
+</html>

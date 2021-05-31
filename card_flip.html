@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Flipped</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            user-select: none;
+        }
+        
+        .card {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 400px;
+            transform-style: preserve-3d;
+            perspective: 600px;
+            transition: 0.5s;
+        }
+        
+        .card .front {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            backface-visibility: hidden;
+            transform: rotateX(0deg);
+            transition: 0.5s;
+        }   
+        
+        .card:hover .front {
+            transform: rotateX(-180deg);
+        }
+        
+        .card .back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            backface-visibility: hidden;
+            transform: rotateX(180deg);
+            transition: 0.5s;
+        }
+        
+        .card:hover .back {
+            transform: rotateX(0deg);
+        }
+        
+        .card .back::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .card .back .details {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            transform: translateY(-50%);
+            padding: 20px;
+            color: white;
+            box-sizing: border-box;
+        }
+        
+        .card .back .details h2 {
+            font-size: 24px;
+        }
+        
+        .card .back .details span {
+            font-size: 16px;
+        }
+        
+        .social-icon {
+            padding: 10px 0;
+        }
+        
+        .social-icon a {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            text-align: center;
+            background: #262626;
+            color: white;
+            text-decoration: none;
+            border-radius: 50%;
+            transition: 0.5s;
+        }
+        
+        .social-icon a .fa {
+            line-height: 36px;
+        }
+        
+        .social-icon a:hover {
+            background: #e91e63;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="front">
+            <img src="assets/model.jpg" alt="">
+        </div>
+        <div class="back">
+            <div class="details">
+                <h2>John Doe<br/><span>Senior Developer</span></h2>
+                <div class="social-icon">
+                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

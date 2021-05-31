@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diamond Structure</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: black;
+        }
+        
+        .diamond_grid {
+            width: 70%;
+            margin: 150px auto 0;
+        }
+        
+        .item {
+            width: 220px;
+            height: 220px;
+            background: white;
+            transition: 0.4s;
+            opacity: 0.5;
+        }
+        
+        .item:hover {
+            opacity: 1;
+        }
+        
+        .item img {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%) scale(1.5);
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="diamond_grid">
+        <div class="item"><img src="https://source.unsplash.com/random/800x800/?nature" alt=""></div>
+        <div class="item"><img src="https://source.unsplash.com/random/800x800/?water>" alt=""></div>
+        <div class="item"><img src="https://source.unsplash.com/random/800x800/?volcano" alt=""></div>
+        <div class="item"><img src="https://source.unsplash.com/random/800x800/?computer" alt=""></div>
+        <div class="item"><img src="https://source.unsplash.com/random/800x800/?river" alt=""></div>
+        <div class="item"><img src="https://source.unsplash.com/random/800x800/?sea" alt=""></div>
+        <div class="item"><img src="https://source.unsplash.com/random/800x800/?lake" alt=""></div>
+        <div class="item"><img src="https://source.unsplash.com/random/800x800/?flower" alt=""></div>
+        <div class="item"><img src="https://source.unsplash.com/random/800x800/?coding" alt=""></div>
+        <div class="item"><img src="https://source.unsplash.com/random/800x800/?alien" alt=""></div>
+        <div class="item"><img src="https://source.unsplash.com/random/800x800/?sun" alt=""></div>
+        <div class="item"><img src="https://source.unsplash.com/random/800x800/?moon" alt=""></div>
+        <div class="item"><img src="https://source.unsplash.com/random/800x800/?planet" alt=""></div>
+        <div class="item"><img src="https://source.unsplash.com/random/800x800/?technology" alt=""></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <link rel="stylesheet" href="assets/Diamond/src/diamonds.css">
+    <script src="assets/Diamond/src/diamonds.js"></script>
+    <script>
+        $(".diamond_grid").diamonds({
+            size: 200, // Size of diamonds in pixels. Both width and height. 
+            gap: 5, // Pixels between each square.
+            hideIncompleteRow: false, // Hide last row if there are not enough items to fill it completely.
+            autoRedraw: true, // Auto redraw diamonds when it detects resizing.
+            itemSelector: ".item" // the css selector to use to select diamonds-items.
+        });
+    </script>
+</body>
+
+</html>

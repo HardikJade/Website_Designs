@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <title>Responsive Page</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background: #ccc;
+        }
+        .container{
+            position: relative;
+            width: 80%;
+            margin: 0 auto;
+            background:white;
+            padding: 20px;
+            min-height: 400px;
+            box-sizing: border-box;
+        }
+        .full-width{
+            width: 100%;
+        }
+        .logo{
+            height: 60px;
+            width: 60px;
+        }
+        nav{
+            width: 100%;
+
+        }
+        nav ul{
+            margin: 20px 0 0;
+            padding: 0;
+            border-radius: 4px;
+            background: #262626;
+            overflow: hidden;
+        }
+        nav ul li{
+            display: inline-block;
+            padding: 15px 20px;
+            list-style: none;
+        }
+        nav ul li a{
+            color: white;
+            text-decoration: none;
+            display: block;
+        }
+        .active,
+        nav ul li:hover{
+            background: #f00;
+        }
+
+        .col-7{
+            width: 70%;
+            min-height: 400px;
+            margin-top: 20px;
+            background: white;
+            float: left;
+        }
+        .col-3{
+            width: 28%;
+            min-height: 400px;
+            background: #f1f1f1;
+            margin-top: 20px;
+            float: right;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+       .post{
+           background:#f1f1f1;
+           padding: 20px;
+           margin-bottom: 20px;
+           text-align: justify;
+       }
+       .post img{
+           max-width: 100%;
+           display: block;
+           margin: 0 auto;
+           max-height: 350px;
+       }
+       h1{
+           margin: 10px 0;
+           font-size: 1.5em;
+       }
+       .col-3 ul{
+           margin: 0;
+           padding: 0;
+       }
+       .col-3 ul li{
+           list-style: none;
+           padding: 8px;
+           border-bottom: 1px solid rgba(0,0,0,0.1);
+       }
+       .col-3 ul li:hover{
+           background: #f00;
+           color: #fff;
+       }
+       .footer-text{
+           text-align: center;
+           font-weight: bold;
+           padding: 10px;
+           background-color: #ccc;
+       }
+
+       @media(max-width: 900px){
+           .container{
+               width: 100%;
+           }
+           nav ul li{
+               display: block;
+               text-align: center;
+           }
+           .col-7,.col-3{
+               width: 100%;
+               flex: none;
+           }
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="full-width">
+            <img class="logo" draggable="false" src="assets/logo.jpg" alt="">
+        </div>
+        <nav>
+            <ul>
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Product</a></li>
+                <li><a href="#">Service</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="full-width">
+            <div class="col-7">
+                <div class="post">
+                    <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi eos dolorem dolor libero a consequatur aspernatur?</h1>
+                    <img src="assets/background.jpg" draggable="false" alt="">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit perspiciatis ipsa voluptas odit corporis assumenda enim, obcaecati provident, hic, cum dolores consequuntur? Cum earum facilis necessitatibus quas odit dignissimos aspernatur expedita odio ex quo a, recusandae repellat eaque aliquid adipisci dicta. Suscipit, voluptas repellat consequuntur earum similique pariatur. Dolorem, ducimus?
+                    </p>
+                    <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nam dolorum debitis animi accusamus, aliquid necessitatibus. Magni, consectetur provident, possimus deserunt quaerat accusamus odio corporis voluptates aliquid natus perspiciatis? Neque deleniti ea nihil quo error. Excepturi eveniet vitae quisquam repellat, ullam minima laborum est ratione.</p>
+                    <p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident nam dolorum debitis animi accusamus, aliquid necessitatibus. Magni, consectetur provident, possimus deserunt quaerat accusamus odio corporis voluptates aliquid natus perspiciatis? Neque deleniti ea nihil quo error. Excepturi eveniet vitae quisquam repellat, ullam minima laborum est ratione.</p>
+                </div>
+                <div class="post">
+                    <h1>Lorem ipsum dolor, sit amet consectetur ?</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit perspiciatis ipsa voluptas odit corporis assumenda enim, obcaecati provident, hic, cum dolores consequuntur? Cum earum facilis necessitatibus quas odit dignissimos aspernatur expedita odio ex quo a, recusandae repellat eaque aliquid adipisci dicta. Suscipit, voluptas repellat consequuntur earum similique pariatur. Dolorem, ducimus?
+                    </p>
+                </div>
+            </div>
+            <div class="col-3">
+                <h1>Sidebar Here</h1>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur.</li>
+                    <li>Lorem ipsum dolor sit.</li>
+                    <li>Lorem ipsum dolor sit, amet consectetur adipisicing.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                </ul>
+            </div>
+ 
+            <div style="clear:both"></div>
+        </div>
+        <div class="full-width">
+                <p class="footer-text">Copyright 2020 Design For You</p>
+        </div>
+    </div>
+</body>
+</html>

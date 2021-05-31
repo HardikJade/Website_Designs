@@ -1,0 +1,1275 @@
+<!-- https://templatemo.com/live/templatemo_535_softy_pinko -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Softy Pinko</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            scroll-behavior: smooth;
+            user-select: none;
+        }
+
+        section{
+            padding: 100px;
+        }
+        header{
+            position: fixed;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 85%;
+            z-index: 10000;
+            top: 30px;
+            left: 50%;
+            border-radius: 70px;
+            transform: translateX(-50%);
+            padding: 15px 35px;
+            box-shadow: 20px 30px 40px rgba(0, 0, 0, 0.3);
+        }
+        header .logo h1{
+            font-size: 1.5em;
+            font-weight: 500;
+        }
+        header .logo h1 .ty{
+            color: #8a64ed;
+            font-weight: bolder;
+        }
+        header .logo h1 .nk{
+            color: #fe589d;
+            font-weight: bolder;
+        }
+        header .navigation{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            list-style: none;
+        }
+        header .navigation li{
+            padding: 15px;
+        }
+        header .navigation li a{
+            color: #111;
+            text-decoration: none;
+            font-size: small;
+        }
+        header .navigation li .active_page,
+        header .navigation li a:hover{
+            color: #fe589d;
+        }
+        .banner{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .banner img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background-size: cover;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+        .counter .counter_overlay,
+        .work .work_overlay,
+        .banner .overlay_banner{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:linear-gradient(90deg,#ad60d4,#9b62e0,#8a64ed);
+            opacity: 0.9;
+        }
+        .banner .bottom_design{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        .banner .content{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            z-index: 10;
+            margin-top: 100px;
+        }
+        .banner .content h2,
+        .banner .content h3
+        {
+            font-size: 36px;
+            font-weight: 500;
+            letter-spacing: 1.4px;
+            color: #fff;
+        }
+        .banner .content p{
+            color: #fff;
+            margin:20px;
+            font-size: medium;
+            letter-spacing: 2px;
+        }
+        .banner .content .btn{
+            padding: 10px 20px;
+            background-color: #fe589d;
+            border-radius: 20px;
+
+        }
+        .banner .content .btn:hover{
+            background:#8261ee;
+        }
+        .banner .content .btn a{
+            text-decoration: none;
+            color: #fff;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+        .banner .card_banner{
+            position: relative;
+            top: 0;
+            left: 0;
+            min-height: 300px;
+            width: 100%;
+            z-index: 100;
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .banner .card_banner .banner_col{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .banner .card_banner .banner_col .banner_box{
+            height: 300px;
+            width: 300px;
+            background: #fff;
+            margin: 20px;
+            border: 10px solid #fff;
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+        }
+        .banner .card_banner .banner_col .banner_box .imgBx{
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 55%;
+            padding: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .banner .card_banner .banner_col .banner_box .imgBx img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 50%;
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            background-position: center;
+            z-index: 5;
+            background-repeat: no-repeat;
+        }
+        .banner .card_banner .banner_col .banner_box .banner_card_content{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        .banner .card_banner .banner_col .banner_box .banner_card_content h3{
+            font-weight: 700;
+            font-size: 18px;
+            color: #1e1e1e;
+            letter-spacing: 0.7px;
+            margin-bottom: 15px;
+        }
+        .banner .card_banner .banner_col .banner_box .banner_card_content p{
+            font-weight: 400;
+            font-size: 13px;
+            color: #777;
+            letter-spacing: 0.5px;
+            line-height: 25px;
+        }
+        .about{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .about .about_buisness,
+        .about .about_discuss{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin: 50px;
+            padding: 0 35px;
+        }
+        .about .about_discuss .imgBx{
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .about .about_discuss .about_content h2{
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 42px;
+            color: #1e1e1e;
+            letter-spacing: 0.25px;
+            margin-bottom: 30px;
+            text-align: justify;
+            padding-left: 10em;
+        }
+
+        .about .about_buisness .about_content h2{
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 42px;
+            color: #1e1e1e;
+            letter-spacing: 0.25px;
+            margin-bottom: 30px;
+            text-align: justify;
+            padding-right: 10em;
+        }
+        .about .about_discuss .about_content p{
+            font-weight: 400;
+            font-size: 16px;
+            color: #777;
+            line-height: 28px;
+            text-align: justify;
+            padding-left: 15em;
+            letter-spacing: 1px;
+        }
+        .about .about_buisness .about_content p{
+            font-weight: 400;
+            font-size: 16px;
+            color: #777;
+            line-height: 28px;
+            text-align: justify;
+            padding-right: 15em;
+            letter-spacing: 1px;
+
+        }
+        .work{
+            position: relative;
+            background: url(assets/white_banner.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+        }
+        .work .work_content{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 1;
+        }
+        .work .work_content .work_text h2{
+            color: #fff;
+            font-weight: 500;
+            font-size: 28px;
+            letter-spacing: 0.25px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .work .work_content .work_text p{
+            letter-spacing: 1px;
+            margin-bottom: 40px;
+            color: #fff;
+            letter-spacing: 0.25px;
+            line-height: 26px;
+            font-weight: 400;
+            font-size: 15px;
+            text-align: center;
+        }
+        .work .work_content .work_card{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin: 20px;
+        }
+        .work .work_content .work_card .work_box{
+            min-height: 200px;
+            min-width: 150px;
+            background: #fff;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+            border: 10px solid #fff;
+            box-shadow: 10px 10px 10px rgb(255, 255, 255,0.4);
+            flex-wrap: wrap;
+            transition:0.5s;
+        }
+        .work .work_content .work_card .work_box:hover{
+            transform: translateY(-10px);
+        }
+        .work .work_content .work_card .work_box .imgBx{
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height:50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .work .work_content .work_card .work_box .imgBx img{
+            position: absolute;
+            height: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-position: center;
+        }
+        .work .work_content .work_card .work_box .card_work_content{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .work .work_content .work_card .work_box .card_work_content h3{
+            font-weight: 400;
+            font-size: 17px;
+            color: #1e1e1e;
+            letter-spacing: 0.25px;
+            margin-bottom: 5px;
+            margin-top: 20px;
+        }
+        .work .work_content .work_card .work_box .card_work_content p{
+            font-weight: 400;
+            font-size: 14px;
+            color: #777;
+            letter-spacing: .75px;
+        }
+        .contact,
+        .blog,
+        .price,
+        .testmonial{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .contact,
+        .price{
+            background: #f2f2fe;
+        }
+        .contact .contact_content,
+        .blog .blog_content,
+        .price .price_content,
+        .testmonial .test_content{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        .contact .contact_content h2,
+        .blog .blog_content h2,
+        .price .price_content h2,
+        .testmonial .test_content h2{
+            font-weight: 500;
+            font-size: 28px;
+            color: #1e1e1e;
+            letter-spacing: 1.75px;
+            line-height: 38px;
+            margin-bottom: 20px;
+        }
+        .contact .contact_content p,
+        .blog .blog_content p,
+        .price .price_content p,
+        .testmonial .test_content p{
+            font-size: 15px;
+            color: #777;
+            margin-bottom: 30px;
+        }
+        .price .price_card,
+        .testmonial .test_card{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        .price .price_card .price_box,
+        .testmonial .test_card .test_box{
+            min-height: 250px;
+            min-width: 250px;
+            width: 325px;
+            border: 10px solid #fff;
+            background: #fff;
+            box-shadow: 10px 10px 45px rgba(0, 0, 0, 0.3);
+            margin: 20px;
+            margin-top: 50px;
+            border-radius: 20px;
+        }
+
+
+        .testmonial .test_card .test_box .imgBx{
+            position: relative;
+            top: 0;
+            left: 0;
+            height: 90px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .testmonial .test_card .test_box .imgBx img{
+            position: absolute;
+            background-position: center;
+        }
+        .price .price_card .price_box p,
+        .testmonial .test_card .test_box p{
+            margin-top: 25px;
+            padding-left: 25px;
+            padding-right: 25px;
+            margin-bottom: 25px;
+            font-weight: 400;
+            font-size: 15px;
+            color: #777;
+            letter-spacing: 0.6px;
+            line-height: 26px;
+        }
+        .testmonial .test_card .test_box .btm_profile{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .testmonial .test_card .test_box .btm_profile{
+            margin-bottom: 20px;
+        }
+        .testmonial .test_card .test_box .btm_profile img{
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            background-position: center;
+            background-size: cover;
+        }
+        .testmonial .test_card .test_box .btm_profile .btm_name .name,
+        .testmonial .test_card .test_box .btm_profile .btm_name .post{
+            margin: 0;
+            font-weight: 400;
+            font-size: 17px;
+            color: #1e1e1e;
+            letter-spacing: 0.25px;
+            margin-bottom: 5px;
+        }
+        .testmonial .test_card .test_box .btm_profile .btm_name .post{
+            font-weight: 400;
+            font-size: 15px;
+            color: #ff589e;
+            letter-spacing: 0.25px;
+        }
+        .testmonial .test_card .test_box:hover .btm_profile .btm_name{
+            transition: 0.8s;
+            transform: translateX(20px);
+        }
+        .price .price_card .price_box{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+            width: 340px;
+            min-width: 339px;
+        }
+        .price .price_card .price_box p{
+            font-weight: 500;
+            font-size: 17px;
+            letter-spacing: 0.25px;
+            color: #1e1e1e;
+            width: 180px;
+            height: 40px;
+            line-height: 40px;
+            left: 0px;
+            right: 0px;
+            margin:15px auto;
+            text-align: center;
+
+        }
+        .price .price_card .price_box .price_container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background: #8261ee;
+            padding: 20px;
+            width: 90%;
+            border-radius: 20px;
+
+        }
+        .price .price_card .price_box .price_container h1 {
+            font-weight: 500;
+            font-size: 28px;
+            color: #fff;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .price .price_card .price_box .price_container h1 span{
+            height: 47px;
+            font-weight: 800;
+            font-size: 40px;
+            color: #fff;
+            position: relative;
+            top: -5px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .price .price_card .price_box .facilities .non_accept,
+        .price .price_card .price_box .facilities .accept{
+            text-align: center;
+            margin-bottom: 12px;
+            font-weight: 400;
+            font-size: 13px;
+            color: #7a7a7a;
+            letter-spacing: 0.25px;
+            margin-top: 0;
+        }
+        .price .price_card .price_box .facilities .non_accept{
+            text-decoration: line-through;
+        }
+        .price .price_card .price_box .btn{
+            padding: 10px 20px;
+            background: #8261ee;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+        .price .price_card .price_box .btn:hover{
+            background: #ff589e;
+        }
+        .price .price_card .price_box  .btn a{
+            font-size: 13px;
+            text-transform: uppercase;
+            color: #fff;
+            letter-spacing: 0.25px;
+            text-decoration: none;
+        }
+        .counter{
+            position: relative;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            background: url(assets/Softy_Piinko/counter_bg.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .counter .counter_box{
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            height: 100%;
+            width: 100%;
+        }
+        .counter .counter_box:hover{
+            transform: translateY(-20px);
+            transition: 0.5s;
+        }
+        .counter .counter_box h2{
+            text-align: center;
+            font-weight: 600;
+            font-size: 36px;
+            letter-spacing: 0.25px;
+            margin-bottom: 10px;
+            color: #fff;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .counter .counter_box span{
+            text-align: center;
+            color: #fff;
+            font-weight: 500;
+            font-size: 17px;
+            letter-spacing: 0.25px;
+        }
+        .blog{
+            background: #fff;
+        }
+        .blog .blog_card{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+        .blog .blog_card .blog_box{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            min-width: 300px;
+            margin: 5px;
+        }
+        .blog .blog_card .blog_box .imgBx{
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            margin: 20px;
+            height: 200px;
+            border-radius: 20px;
+        }
+        .blog .blog_card .blog_box .imgBx img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-size: contain;
+        }
+        .blog .blog_card .blog_box h2{
+            font-weight: 500;
+            font-size: 18px;
+            color: #1e1e1e;
+            letter-spacing: 0.25px;
+            line-height: 26px;
+        }
+        .blog .blog_card .blog_box p{
+            font-weight: 400;
+            font-size: 13px;
+            color: #777;
+            letter-spacing: 0.26px;
+            line-height: 26px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .blog .blog_card .blog_box .btn{
+            padding: 12px 20px;
+            background: #8261ee;
+            margin-bottom: 20px;
+            border-radius: 20px;
+        }
+        .blog .blog_card .blog_box .btn:hover{
+            background: #ff589e;
+        }
+        .blog .blog_card .blog_box .btn a{
+            text-decoration: none;
+            font-size: 13px;
+            text-transform: uppercase;
+            color: #fff;
+            letter-spacing: 0.25px;
+        }
+        .contact .contact_content_main{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+        }
+        .contact .contact_content_main .contact_side{
+            width: 30%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .contact .contact_content_main .contact_side h2{
+            font-weight: 500;
+            font-size: 18px;
+            color: #1e1e1e;
+            letter-spacing: 0.25px;
+            line-height: 26px;
+            margin-bottom: 10px;
+        }
+        .contact .contact_content_main .contact_side p{
+            font-weight: 400;
+            font-size: 14px;
+            color: #6F8BA4;
+            letter-spacing: 0.6px;
+            line-height: 26px;
+        }
+        .contact .contact_content_main .contact_form{
+            width: 100%;
+            height:100%;
+        }
+        .contact .contact_content_main .contact_form form{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+        .contact .contact_content_main .contact_form form .name_email{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .contact .contact_content_main .contact_form form .name_email{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            justify-content: center;
+            width: 100%;
+            margin: 10px;
+        }
+        .contact .contact_content_main .contact_form form .name_email input[type="email"],
+        .contact .contact_content_main .contact_form form .name_email input[type="text"]{
+            width: 50%;
+            height: 100%;
+            border: none;
+            color: #777;
+            font-size: 14px;
+            border: 1px solid #eee;
+            width: 100%;
+            height: 50px;
+            outline: none;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 25px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            margin: 30px;
+            margin-bottom: 30px;
+        }
+        .contact .contact_content_main .contact_form form .msg{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-inline-start: 30px;
+            padding-inline-end: 30px;
+            padding-block-end: 0.625em;
+            width: 100%;
+            height: 10rem;
+            margin:0px 30px;
+
+        }
+        .contact .contact_content_main .contact_form form .msg textarea{
+            color: #777;
+            font-size: 14px;
+            border: 1px solid #eee;
+            width: 100%;
+            height: 100%;
+            border-radius: 25px;
+            padding: 20px;
+            appearance: none;
+            margin-bottom: 30px;
+            resize: none;
+        }
+        .contact .contact_content_main .contact_form form input[type="submit"]{
+            padding: 25px 40px;
+            border-radius: 30px;
+
+            outline: none; 
+            border: none; 
+            cursor: pointer;
+            font-size: 13px;
+            border-radius: 20px;
+            padding: 12px 20px;
+            background-color: #8261ee;
+            text-transform: uppercase;
+            color: #fff;
+            letter-spacing: 0.25px;
+        }
+        .footer{
+            background: #8d5fe6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+            padding: 50px;
+        }
+        .footer .social {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+        .footer .social .social_list{
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .footer .social ul li{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        .footer .social ul li a{
+            position: relative;
+            background-color: #fff;
+            text-decoration: none;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            padding: 20px;
+        }
+        .footer .social ul li a:hover{
+            transform: translateY(-10px);
+            transition: 0.5s;
+        }
+        .footer .social ul li a img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-position: center;
+        }
+        .footer hr{
+            width: 100%;
+            margin: 20px;
+        }
+        .footer p{
+            text-align: center;
+            margin-top: 30px;
+            font-weight: 400;
+            font-size: 12px;
+            color: #fff;
+            letter-spacing: 0.88px;
+            text-transform: uppercase;
+        
+        }
+        </style>
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Sof<span class="ty">ty</span> Pin<span class="nk">ko</span></h1>
+        </div>
+        <ul class="navigation">
+            <li><a href="#" class="active_page">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work Process</a></li>
+            <li><a href="#testmonial">Testmonials</a></li>
+            <li><a href="#price">Price Tables</a></li>
+            <li><a href="#blog">Blog Entries</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </header>
+    <section class="banner" id="banner">
+        <img src="assets/white_banner.jpg" alt="">
+        <div class="overlay_banner"></div>
+        <div class="content">
+            <div class="heading">
+                <h2>We Provide The Best Stratergy</h2>
+                <h3>To Grow Up The Buisness</h3>
+                <p>Lorem ipsum, dolor sit amet consectetur <br>
+                    Lorem ipsum dolor sit amet consectetur adipis
+                </p>
+            </div>
+            <div class="btn">
+                <a href="#">Discover More</a>
+            </div>
+        </div>
+        <div class="card_banner">
+            <div class="banner_col">
+                <div class="banner_box">
+                    <div class="imgBx">
+                        <img src="assets/white_banner.jpg" alt="Not Assign">
+                    </div>
+                    <div class="banner_card_content">
+                        <h3>Modern Stratergy</h3>
+                        <p>Lorem ipsum dolor sit amet.
+                            Lorem ipsum dolor sit ame
+                        </p>
+                    </div>
+                </div>
+                <div class="banner_box">
+                    <div class="imgBx">
+                        <img src="assets/white_banner.jpg" alt="Not Assign">
+                    </div>
+                    <div class="banner_card_content">
+                        <h3>Modern Stratergy</h3>
+                        <p>Lorem ipsum dolor sit amet.
+                            Lorem ipsum dolor sit ame
+                        </p>
+                    </div>
+                </div>
+                <div class="banner_box">
+                    <div class="imgBx">
+                        <img src="assets/white_banner.jpg" alt="Not Assign">
+                    </div>
+                    <div class="banner_card_content">
+                        <h3>Modern Stratergy</h3>
+                        <p>Lorem ipsum dolor sit amet.
+                            Lorem ipsum dolor sit ame
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <svg class="bottom_design" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200"><path fill="#fff" fill-opacity="1" d="M0,96L80,96C160,96,320,96,480,117.3C640,139,800,181,960,192C1120,203,1280,181,1360,170.7L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>
+    </section>
+    <section class="about" id="about">
+        <div class="about_discuss">
+            <div class="imgBx">
+                <img src="assets/Softy_Piinko/about1.png" alt="">
+            </div>
+            <div class="about_content">
+                <h2>Let's Discuss About Your Projects</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum eius accusantium a similique repudiandae saepe.</p>
+            </div>
+        </div>
+        <div class="about_buisness">
+            <div class="about_content">
+                <h2>Let's Discuss About Your Projects</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum eius accusantium a similique repudiandae saepe.</p>
+            </div>
+            <div class="imgBx">
+                <img src="assets/Softy_Piinko/about2.png" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="work" id="work">
+        <div class="work_overlay"></div>
+        <div class="work_content">
+            <div class="work_text">
+                <h2>Work Process</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa, numquam.
+                    <br>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+            </div>
+            <div class="work_card">
+
+
+                <div class="work_box">
+                    <div class="imgBx">
+                        <img src="assets/Softy_Piinko/rocket.png" alt="">
+                    </div>
+                    <div class="card_work_content">
+                        <h3>Get Ideas</h3>
+                        <p>Lorem, ipsum dolor.</p>
+                        <p>Lorem, ipsum.</p>
+                        <p>Lorem</p>
+                    </div>
+                </div>
+                <div class="work_box">
+                    <div class="imgBx">
+                        <img src="assets/Softy_Piinko/rocket.png" alt="">
+                    </div>
+                    <div class="card_work_content">
+                        <h3>Get Ideas</h3>
+                        <p>Lorem, ipsum dolor.</p>
+                        <p>Lorem, ipsum.</p>
+                        <p>Lorem</p>
+                    </div>
+                </div>
+                <div class="work_box">
+                    <div class="imgBx">
+                        <img src="assets/Softy_Piinko/rocket.png" alt="">
+                    </div>
+                    <div class="card_work_content">
+                        <h3>Get Ideas</h3>
+                        <p>Lorem, ipsum dolor.</p>
+                        <p>Lorem, ipsum.</p>
+                        <p>Lorem</p>
+                    </div>
+                </div>
+                <div class="work_box">
+                    <div class="imgBx">
+                        <img src="assets/Softy_Piinko/rocket.png" alt="">
+                    </div>
+                    <div class="card_work_content">
+                        <h3>Get Ideas</h3>
+                        <p>Lorem, ipsum dolor.</p>
+                        <p>Lorem, ipsum.</p>
+                        <p>Lorem</p>
+                    </div>
+                </div>
+                <div class="work_box">
+                    <div class="imgBx">
+                        <img src="assets/Softy_Piinko/rocket.png" alt="">
+                    </div>
+                    <div class="card_work_content">
+                        <h3>Get Ideas</h3>
+                        <p>Lorem, ipsum dolor.</p>
+                        <p>Lorem, ipsum.</p>
+                        <p>Lorem</p>
+                    </div>
+                </div>
+                <div class="work_box">
+                    <div class="imgBx">
+                        <img src="assets/Softy_Piinko/rocket.png" alt="">
+                    </div>
+                    <div class="card_work_content">
+                        <h3>Get Ideas</h3>
+                        <p>Lorem, ipsum dolor.</p>
+                        <p>Lorem, ipsum.</p>
+                        <p>Lorem</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="testmonial" id="testmonial">
+        <div class="test_content">
+            <h2>What Do They Say?</h2>
+            <p>Donec tempus, sem non rutrum imperdiet, lectus orci fringilla nulla,
+                <br>
+            at accumsan elit eros a turpis. Ut sagittis lectus libero.</p>
+        </div>
+        <div class="test_card">
+
+
+            <div class="test_box">
+                <div class="imgBx">
+                    <img src="assets/Softy_Piinko/post.png" alt="">
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi facere minima esse quisquam exercitationem omnis, nesciunt, repudiandae
+                exercitationem omnis, nesciunt, repudiandae</p>
+                <div class="btm_profile">
+                    <img src="assets/Built/model.jpg" alt="">
+                    <div class="btm_name">
+                        <p class="name">Catherine Soft</p>
+                        <p class="post">Director</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="test_box">
+                <div class="imgBx">
+                    <img src="assets/Softy_Piinko/post.png" alt="">
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi facere minima esse quisquam exercitationem omnis, nesciunt, repudiandae
+                exercitationem omnis, nesciunt, repudiandae</p>
+                <div class="btm_profile">
+                    <img src="assets/Built/model2.jpg" alt="">
+                    <div class="btm_name">
+                        <p class="name">
+                            Kelvin Wood</p>
+                        <p class="post">Digital Marketer</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="test_box">
+                <div class="imgBx">
+                    <img src="assets/Softy_Piinko/post.png" alt="">
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi facere minima esse quisquam exercitationem omnis, nesciunt, repudiandae
+                exercitationem omnis, nesciunt, repudiandae</p>
+                <div class="btm_profile">
+                    <img src="assets/Built/model3.jpg" alt="">
+                    <div class="btm_name">
+                        <p class="name">David Martin</p>
+                        <p class="post">Website Manager</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="price" id="price">
+        <div class="price_content">
+            <h2>Pricing Plans</h2>
+            <p>Donec tempus, sem non rutrum imperdiet, lectus orci fringilla nulla,
+                <br>
+            at accumsan elit eros a turpis. Ut sagittis lectus libero.</p>
+        </div>
+        <div class="price_card">
+
+
+            <div class="price_box">
+                <p>Starter</p>
+                <div class="price_container">
+                    <h1><span>$</span>14.50</h1>
+                    <h1 style="font-size: 14px;margin-top:5px">monthly</h1>
+                </div>
+                <div class="facilities">
+                    <p class="accept">60 GB space</p>
+                    <p class="accept">600 GB transfer</p>
+                    <p class="accept">Pro Design Panel</p>
+                    <p class="non_accept">15-minute support</p>
+                    <p class="non_accept">Unlimited Emails</p>
+                    <p class="non_accept">24/7 Security</p>
+                </div>
+                <div class="btn"><a href="#">Purchase Now</a></div>
+            </div>
+
+
+            <div class="price_box">
+                <p>Premium</p>
+                <div class="price_container" style="background: #ff589e;">
+                    <h1><span>$</span>21.50</h1>
+                    <h1 style="font-size: 14px;margin-top:5px">monthly</h1>
+                </div>
+                <div class="facilities">
+                    <p class="accept">60 GB space</p>
+                    <p class="accept">600 GB transfer</p>
+                    <p class="accept">Pro Design Panel</p>
+                    <p class="accept">15-minute support</p>
+                    <p class="non_accept">Unlimited Emails</p>
+                    <p class="non_accept">24/7 Security</p>
+                </div>
+                <div class="btn"><a href="#">Purchase Now</a></div>
+            </div>
+
+            <div class="price_box">
+                <p>Advanced</p>
+                <div class="price_container">
+                    <h1><span>$</span>42.00</h1>
+                    <h1 style="font-size: 14px;margin-top:5px">monthly</h1>
+                </div>
+                <div class="facilities">
+                    <p class="accept">60 GB space</p>
+                    <p class="accept">600 GB transfer</p>
+                    <p class="accept">Pro Design Panel</p>
+                    <p class="accept">15-minute support</p>
+                    <p class="accept">Unlimited Emails</p>
+                    <p class="accept">24/7 Security</p>
+                </div>
+                <div class="btn"><a href="#">Purchase Now</a></div>
+            </div>
+
+
+        </div>
+
+    </section>
+    <section class="counter">
+        <div class="counter_overlay"></div>
+
+        <div class="no_project counter_box">
+            <h2>126</h2>
+            <span>Projects</span>
+        </div>
+        <div class="happy_clinets counter_box">
+            <h2>63</h2>
+            <span>Projects</span>
+        </div>
+        <div class="award_win counter_box">
+            <h2>18</h2>
+            <span>Awards Wins</span>
+        </div>
+        <div class="no_countries counter_box">
+            <h2>127</h2>
+            <span>Countries</span>
+        </div>
+    </section>
+    <section class="blog" id="blog">
+        <div class="blog_content">
+            <h2>Blog Entries</h2>
+            <p>Donec tempus, sem non rutrum imperdiet, lectus orci fringilla nulla,
+                <br>
+            at accumsan elit eros a turpis. Ut sagittis lectus libero.</p>
+        </div>
+        <div class="blog_card">
+
+            <div class="blog_box">
+                <div class="imgBx">
+                    <img src="assets/Softy_Piinko/blog1.png" alt="">
+                </div>
+                <h2>Lorem ipsum dolor sit amet.</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+                    Lorem ipsum dolor sit ametelit
+                    <br>met consectetur adipisicing elit.</p>
+                <div class="btn"><a href="#">Read More</a></div>
+            </div>
+            <div class="blog_box">
+                <div class="imgBx">
+                    <img src="assets/Softy_Piinko/blog2.png" alt="">
+                </div>
+                <h2>Lorem ipsum dolor sit amet.</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+                    Lorem ipsum dolor sit ametelit
+                    <br>met consectetur adipisicing elit.</p>
+                <div class="btn"><a href="#">Read More</a></div>
+            </div>
+            <div class="blog_box">
+                <div class="imgBx">
+                    <img src="assets/Softy_Piinko/blog3.png" alt="">
+                </div>
+                <h2>Lorem ipsum dolor sit amet.</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+                    Lorem ipsum dolor sit ametelit
+                    <br>met consectetur adipisicing elit.</p>
+                <div class="btn"><a href="#">Read More</a></div>
+            </div>
+
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="contact_content">
+            <h2>Contact Us</h2>
+            <p>Donec tempus, sem non rutrum imperdiet, lectus orci fringilla nulla,
+                <br>
+            at accumsan elit eros a turpis. Ut sagittis lectus libero.</p>
+        </div>
+        <div class="contact_content_main">
+            <div class="contact_side">
+                <h2>Keep In Touch</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, voluptate!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem, dolore.
+                    <br>
+                    <br>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat, omnis officia. Temporibus nostrum dolorem blanditiis non commodi, reprehenderit ex iusto!
+                </p>
+            </div>
+            <div class="contact_form">
+                <form action="" method="post">
+                    <div class="name_email">
+                        <input type="text" placeholder="Full Name">
+                        <input type="email" name="" id="" placeholder="Email">
+                    </div>
+                    <div class="msg">
+                        <textarea placeholder="Your Message...."></textarea>
+                    </div>
+                    <input type="submit" value="Send Message">
+                </form>
+            </div>
+        </div>
+
+    </section>
+    <section class="footer">
+        <div class="social">
+            <ul class="social_list">
+                <li><a href="#"><img src="assets/Softy_Piinko/insta.png" alt=""></a></li>
+                <li><a href="#"><img src="assets/Softy_Piinko/insta.png" alt=""></a></li>
+                <li><a href="#"><img src="assets/Softy_Piinko/insta.png" alt=""></a></li>
+                <li><a href="#"><img src="assets/Softy_Piinko/insta.png" alt=""></a></li>
+                <li><a href="#"><img src="assets/Softy_Piinko/insta.png" alt=""></a></li>
+            </ul>
+        </div>
+        <hr>
+        <p>Copyright 2021 All Right Reserved To JDE Tech</p>
+    </section>
+</body>
+</html>

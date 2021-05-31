@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Diwali</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        section {
+            height: 100vh;
+            width: 100%;
+            background: #000;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        section h1{
+            position: relative;
+            color: #fff;
+            font-size: 8em;
+            z-index: 999999;
+            user-select: none;
+            mix-blend-mode: overlay;
+        }
+        section video{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Happy Diwali</h1>
+        <video src="assets/smoke.mp4" autoplay muted loop type="mp4"></video>
+    </section>
+</body>
+</html>

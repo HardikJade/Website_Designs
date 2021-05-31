@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happiness</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+            font-family: sans-serif;
+        }
+        section{
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-self: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        header{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 40px 100px;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header .logo{
+            position: relative;
+            font-size: 2em;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-decoration: none;
+            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+            transition: 0.5s;
+        }
+        header .toggle{
+            position: relative;
+            width: 40px;
+            height: 40px;
+            background: url(assets/Built/toggle.png);
+            background-position: center;
+            cursor: pointer;
+            background-size: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        header .active{
+            background: url(assets/food_website/close.png);
+            background-position: center;
+            cursor: pointer;
+            background-size: 30px;
+            background-repeat: no-repeat;
+            object-fit: cover;
+        }
+        header .toggle:before{
+            content: "Menu";
+            position: absolute;
+            right: 45px;
+            text-transform: uppercase;
+            color: #111;
+            letter-spacing: 2px;
+            font-size: 14px;
+            padding: 2px 5px;
+            background: #fff;
+            margin-right: 10px;
+        }
+        header .toggle .active:before{
+            content: "Close";
+        }
+        section video{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .glass{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40%;
+            height: 100%;
+            z-index: 1;
+            backdrop-filter: blur(15px);
+            box-shadow: 10px 0 15px rgba(0, 0, 0, 0.1) ;
+            transition: 0.5s;
+            transition-delay: 0.5s;
+        }
+        section .full_blur{
+            width: 100%;
+            backdrop-filter: blur(20px);
+            transition-delay: 0.0s;
+            box-shadow: 10px 0 15px rgba(0, 0, 0, 0.5);
+        }
+        section .content{
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            transition: 0.5s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition-delay: 0s;
+        }
+        section .content h2{
+            position: relative;
+            color: #fff;
+            font-size: 10vw;
+            line-height: 0.55em;
+            text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+        }
+        section .content h2 span{
+            font-size: 0.2em;
+            font-weight: 300;
+            letter-spacing: 5px;
+            color: #111;
+            background: #fff;
+            padding: 0px 10px;
+            text-shadow: 0 5px 5px rgba(0, 0, 0, 0);
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+            font-family: "Dancing Script",cursive;
+        }
+        .translate{
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(-2000px);
+            transition-delay: 0.5s;
+        }
+        section .sci{
+            position: absolute;
+            bottom: 40px;
+            right: 100px;
+            display: flex;
+            z-index: 100;
+        }
+        section .sci li{
+            list-style: none;
+            margin: 5px;
+            padding: 0 6px;
+            background: #fff;
+            transition-delay: calc(0.2s * var(--i));
+        }
+        section .sci li a{
+            text-decoration: none;
+            color: #111;
+            display: inline-block;
+            letter-spacing: 2px;
+            font-weight: 500;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+        .nose_down{
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(100px);
+            transition-delay: calc(0.2s * var(--i));
+        }
+        section .navigation{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            z-index: 100;
+        }
+        section .navigation li{
+            list-style: none;
+            text-align: center;
+            margin: 15px 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.5s;
+            transform: translateX(2000px);
+        }
+        .navigation .nose_up{
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0px);
+            z-index: 10000;
+        }
+        section .navigation li a{
+            color: #111;
+            font-size: 1.5em;
+            letter-spacing: 4px;
+            font-weight: 400;
+            text-transform: uppercase;
+            background: #fff;
+            padding: 4px 10px;
+            display: inline-block;
+            text-decoration: none;
+
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <header>
+            <a href="#" class="logo">Water.</a>
+            <div class="toggle" onclick="menu_toggle()"></div>
+        </header>
+        <div class="glass"></div>
+        <div class="content">
+            <h2>Happiness..
+                <br>
+                <span>
+                Crystal Clear Ocean Water....
+            </span></h2>
+        </div>
+        <video src="assets/happiness.mp4" type="mp4" autoplay muted loop></video>
+        <ul class="sci">
+            <li style="--i:1"><a href="#">Facebook</a></li>
+            <li style="--i:2"><a href="#">Twitter</a></li>
+            <li style="--i:3"><a href="#">Instagram</a></li>
+        </ul>
+        <ul class="navigation">
+            <li class="nav_li" style="--i:1;"><a href="#">Home</a></li>
+            <li class="nav_li" style="--i:1;"><a href="#">About</a></li>
+            <li class="nav_li" style="--i:1;"><a href="#">Tour</a></li>
+            <li class="nav_li"style="--i:1;"><a href="#">Contact</a></li>
+        </ul>
+    </section>
+
+
+    <script>
+        function menu_toggle(){
+            const toggle = document.querySelector(".toggle");
+            const section = document.querySelector("section");
+            const glass = document.querySelector(".glass");
+            const content = document.querySelector(".content");
+            const sign = document.querySelector(".sci");
+            var navigation = Array.prototype.slice.call(document.getElementsByClassName("nav_li"));
+            toggle.classList.toggle('active');
+            section.classList.toggle('full_blur');
+            glass.classList.toggle('full_blur');
+            content.classList.toggle('translate');
+            sign.classList.toggle('nose_down');
+            navigation.forEach(index_er);
+            function index_er(item,index){
+                item.classList.toggle('nose_up');
+            }
+        }
+    </script>
+</body>
+</html>

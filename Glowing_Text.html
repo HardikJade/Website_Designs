@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowing Text</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            user-select: none;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background:radial-gradient(#111,#000);
+        }
+        .text{
+            position: relative;
+            font-size: 10em;
+            text-transform: uppercase;
+            color: transparent;
+            background: linear-gradient(to bottom,#222 20%,#222 50%,#111 20%,#111 50%);
+            -webkit-background-clip: text;
+        }
+        .text::before{
+            content: attr(data-text);
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            z-index: -1;
+            background: linear-gradient(45deg,#ff0,#0f0,#f00,#00f,#0f0);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .text::after{
+            content: attr(data-text);
+            position: absolute;
+            top: 30px;
+            left: 20px;
+            z-index: -2;
+            background: linear-gradient(45deg,#ff0,#0f0,#f00,#00f,#0f0);
+            -webkit-background-clip: text;
+            color: transparent;
+            filter: blur(20px);
+        }
+    </style>
+</head>
+<body>
+    <h2 class="text" data-text="Glowing">Glowing</h2>
+</body>
+</html>

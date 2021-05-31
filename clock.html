@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #091921;
+        }
+        .clock{
+            width: 350px;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url(assets/clock.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            filter: invert(0.2);
+            border: 4px solid #091921;
+            border-radius: 50%;
+            box-shadow: 0 -15px 15px rgba(255,255,255,0.05),
+                                    inset 0 -15px 15px rgba(255,255,255,0.05),
+                                    0 15px 15px rgba(0,0,0,0.3),
+                                    inset 0 15px 15px rgba(0,0,0,0.3);
+        }
+        .clock::before{
+            content : "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: #fff;
+            border-radius: 50%;
+            z-index: 1000;
+        }
+        .clock .hour,
+        .clock .min,
+        .clock .sec{
+            position: absolute;
+        }
+        .clock .hour, .hr{
+            width: 160px;
+            height: 160px;
+        }
+        .clock .min, .mn{
+            width: 190px;
+            height: 190px;
+        }
+        .clock .sec, .sc{
+            width: 230px;
+            height: 230px;
+        }
+        .hr,.mn,.sc{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+        .hr::before{
+            content: "";
+            position: absolute;
+            width: 8px;
+            height: 80px;
+            background: #ff105e;
+            z-index: 10;
+            border-radius: 6px 6px 0 0;
+            top: 0;
+        }
+        .mn::before{
+            content: "";
+            position: absolute;
+            width: 4px;
+            height: 105px;
+            background: #fff;
+            z-index: 11;
+            border-radius: 6px 6px 0 0;
+            top: 10px;
+        }
+        .sc::before{
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 135px;
+            background: #fff;
+            z-index: 15;
+            border-radius: 6px 6px 0 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="hour">
+            <div class="hr" id="hr"></div>
+        </div>
+        <div class="min">
+            <div class="mn" id="mn"></div>
+        </div>
+        <div class="sec">
+            <div class="sc" id="sc"></div>
+        </div>
+    </div>
+    <script>
+        function brain() {
+            var date = new Date()
+            var hours_s = date.getHours()
+            var minutes_s = date.getMinutes()
+            var seconds_s = date.getSeconds()
+            var hours = document.getElementById("hr")
+            var minutes = document.getElementById("mn")
+            var second = document.getElementById("sc")
+            h_deg = ((30 * hours_s) + (0.6 * minutes_s))
+            m_deg = (6 * minutes_s)
+            s_deg = (6 * seconds_s)
+            hours.style.transform = "rotate(" + h_deg + "deg)"
+            minutes.style.transform = "rotate(" + m_deg + "deg)"
+            second.style.transform = "rotate(" + s_deg + "deg)"
+        }
+        setInterval(brain, 1000)
+    </script>
+</body>
+</html>

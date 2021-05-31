@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Built It | Home</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        section{
+            padding: 100px;
+        }
+        .banner{
+            background: url(assets/Built/bg3.jpg);
+            height: 100vh;
+            width: 100%;
+            background-size: cover;
+            object-fit: cover;
+           
+        }
+        .banner .overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgb(127,74,233,0.9);
+            width: 100%;
+            height: 100%;
+            mix-blend-mode: overlay;
+        }
+        .banner .overlay_me{
+            height: calc(100% + 72px);
+        }
+        .banner .content{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .banner .content .titleText{
+            color: #fff;
+            font-size: 4em;
+            font-weight: 800;
+            text-align: center;
+        }
+        .banner .content .desc{
+            color: #fff;
+            font-size: 1.5em;
+            text-align: center;
+            font-weight: 500;
+        }
+        .header{
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 15px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            z-index: 9999;
+        }
+
+        .header .brandName{
+            color: #fff;
+            font-size: 1.5em;
+            font-weight: 800;
+        }
+
+        .navigation{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            list-style: none;
+        }
+        .navigation li a{
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+        .navigation li a:hover{
+            font-size: 1.5em;
+        }
+        .sticky_header{
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-shadow: rgba(0, 0, 0, 0.05);
+            padding: 15px 40px;
+            background-color: #fff;
+        }
+        .sticky_header .brandName,
+        .sticky_header .navigation li a{
+            color: #111;
+        }
+        
+       .title{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+         
+       .title h2 {
+            font-size: 1.5em;
+        }
+       h2 span{
+            font-size: 2em;
+            font-family: sans-serif;
+            font-weight: 700;
+        }
+       .title p{
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+        .contract .contract_row{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .contract .contract_row .contract_col{
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            flex-direction: row-reverse;
+            margin-top: 20px;
+        }
+        .contract .contract_row .contract_col .box{
+            width: 300px;
+            margin: 20px;
+            position: relative;
+            top: 0;
+            left: 0;
+            border: 15px solid #fff;
+            box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.5);
+        }
+        .contract .contract_row .contract_col .box .imgBx{
+            position: relative;
+            top: 0;
+            left: 0;
+            height: 300px;
+            width: 100%;
+        }
+        .contract .contract_row .contract_col .box .imgBx img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .contract_col .content{
+            padding: 10px;
+        }
+        .contract_col .content h3{
+            font-size: 1.3em;
+            font-weight: 900;
+            padding: 5px;
+        }
+        .contract_col .content p{
+            font-size: 1.2em;
+        }
+        .btn{
+            display: inline-block;
+            padding:10px 20px;
+            background-color:rgb(127,74,233,0.9);
+            margin-top: 20px;
+        }
+        .btn a{
+            text-decoration: none;
+            font-size: 1.2em;
+            color: #ddd;
+        }
+        .btn:hover{
+            letter-spacing: 3px;
+        }
+
+
+        .testmonial .test_row{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .testmonial .test_col{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        .testmonial .test_col .test_box{
+            height: 300px;
+            width: 530px;
+            margin-top: 50px;
+            border: 10px #fff solid;
+            margin: 20px;
+            box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .testmonial .test_col .test_box .test_gra{
+            height: 100%;
+            width: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+            margin: 20px;
+        }
+        .testmonial .test_col .test_box .test_gra .test_img_bx{            
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #111;
+            height: 50%;
+        }
+        .testmonial .test_col .test_box .test_gra .test_img_bx img{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.2);
+        }
+        .testmonial .test_col .test_box .test_gra .test_name{
+            font-weight: 500;
+            font-size: 1.3em;
+        }
+        .testmonial .test_col .test_box .test_gra .test_name span{
+            font-weight: 800;
+            font-size: 1.8em;
+        }
+        .test_box .test_saying{
+            height: 100%;
+            padding: 20px;
+        }
+        .test_box .test_saying p{
+            color: #111;
+            font-size: 1.2em;
+            font-style: italic;
+        }
+        .about .about_row{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .about .about_row .about_col{
+            margin: 20px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 35px;
+        }
+        .about .about_row .about_col .about_card{
+            position: relative;
+            margin: 20px;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 400px;
+            transform-style: preserve-3d;
+            perspective: 600px;
+            transition: 0.5s
+            
+        }
+        .about .about_row .about_col .about_card .about_front{         
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            backface-visibility: hidden;
+            transform: rotateX(0deg);
+            transition: 0.5s;
+        }
+        .about .about_row .about_col .about_card .about_front img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        
+        .about .about_row .about_col .about_card:hover .about_front {
+            transform: rotateX(-180deg);
+        }
+        
+        .about .about_row .about_col .about_card .about_back{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            backface-visibility: hidden;
+            transform: rotateX(180deg);
+            transition: 0.5s;
+        }
+        .about .about_row .about_col .about_card:hover .about_back{
+            transform: rotate(0deg);
+        }
+        .about_card .about_back .about_details {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            transform: translateY(-50%);
+            padding: 20px;
+            color: white;
+            box-sizing: border-box;
+        }
+        .about_card .about_back .about_details h2 {
+            font-size: 24px;
+        }
+        
+        .about_card .about_back .about_details span {
+            font-size: 16px;
+        }
+        .about_card .about_back::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        
+        .about_social-icon {
+            padding: 10px 0;
+        }
+
+        .about_social-icon a {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            text-align: center;
+            background: #262626;
+            color: white;
+            text-decoration: none;
+            border-radius: 50%;
+            transition: 0.5s;
+        }
+        
+        .about_social-icon a .fa {
+            line-height: 36px;
+        }
+        .contact{
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+        
+        }
+        .contact form {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: url(assets/Built/contact.jpg);
+            object-fit: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            flex-direction: column;
+            width: 100%;
+           
+        }
+        .contact form .contact_form{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            flex-direction: column;
+            background: #fff;
+            width: 500px;
+            max-width: 500px;
+            border: 10px solid #fff;
+            box-shadow:30px 20px 40px rgba(0, 0, 0, 0.2);
+            margin-right: 110px;
+        }
+        textarea,
+        .contact form .contact_form input{
+            height: 50px;
+            width: 100%;
+            margin: 20px;
+            border: 1px solid #111;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 1.2em;
+        }
+        textarea{
+            height: 100px;
+            resize: none;
+        }
+        .contact_title{
+            padding-top: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-bottom: 30px;
+        }
+
+        .contact form .contact_form #submit_btn{
+            background: rgb(127,74,233,0.9);
+            border: none;
+            color: #fff;
+            font-size: 1.3em;
+            font-weight: 500;
+            width: min-content;
+            padding: 10px 20px;
+            border-radius: 0;
+
+        }
+        </style>
+</head>
+<body>
+    <div class="header">
+        <div class="brandName">
+            <h2>Built It</h2>
+        </div>
+        <ul class="navigation">
+            <li><a href = "#">Home</a></li>
+            <li><a href = "#contract">Contracts</a></li>
+            <li><a href = "#testmonial">Testmonials</a></li>
+            <li><a href = "#about">About</a></li>
+            <li><a href = "#contact_title">Contact</a></li>
+        </ul>
+    </div>
+    <section class="banner" id="banner">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="titleText">
+                <h2>Built It Today</h2>
+            </div>
+            <div class="desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum esse, blanditiis nihil unde obcaecati dolor, quo neque, rerum laborum aut placeat! Am
+            </div>
+        </div>
+    </section>
+    <section class="contract" id="contract">
+        <div class="title">
+            <h2><span>O</span>ur Contracts</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, dolore.</p>
+        </div>
+        <div class="contract_row">
+            <div class="contract_col">
+                <div class="box">
+                    <div class="imgBx">
+                        <img src="assets/Built/card1.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Contract</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae sint reiciendis deleniti, dolorum dignissimos pariatur.</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="imgBx">
+                        <img src="assets/Built/card2.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Contract</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae sint reiciendis deleniti, dolorum dignissimos pariatur.</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="imgBx">
+                        <img src="assets/Built/card3.jpg" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>Contract</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae sint reiciendis deleniti, dolorum dignissimos pariatur.</p>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="btn">
+                <a href="#">View More</a>
+            </div>
+        </div>
+    </section>
+    <section class="testmonial" id="testmonial">
+        <div class="title">
+            <h2><span>O</span>ur Clinets</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, dolore.</p>
+        </div>
+
+        <div class="test_row">
+            <div class="test_col">
+
+
+                <div class="test_box">
+                    <div class="test_gra">
+                        <div class="test_img_bx">
+                            <img src="assets/Built/testi1.jpg" alt="">
+                        </div>
+                        <div class="test_name"><span>J</span>ohn Doe</div>
+                    </div>
+                    <div class="test_saying">
+
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur, quidem facere reiciendis in doloribus aliquam eveniet illum alias est quibusdam distinctio liber</p>
+                    </div>
+                </div>
+
+
+                <div class="test_box">
+                    <div class="test_gra">
+                        <div class="test_img_bx">
+                            <img src="assets/Built/model2.jpg" alt="">
+                        </div>
+                        <div class="test_name"><span>J</span>ohn Doe</div>
+                    </div>
+                    <div class="test_saying">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur, quidem facere reiciendis in doloribus aliquam eveniet illum alias est quibusdam distinctio liber</p>
+                    </div>
+                </div>
+
+
+                <div class="test_box">
+                    <div class="test_gra">
+                        <div class="test_img_bx">
+                            <img src="assets/Built/testi3.jpg" alt="">
+                        </div>
+                        <div class="test_name"><span>J</span>ohn Doe</div>
+                    </div>
+                    <div class="test_saying">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur, quidem facere reiciendis in doloribus aliquam eveniet illum alias est quibusdam distinctio liber</p>
+                    </div>
+                </div>
+
+                <div class="test_box">
+                    <div class="test_gra">
+                        <div class="test_img_bx">
+                            <img src="assets/Built/model.jpg" alt="">
+                        </div>
+                        <div class="test_name"><span>J</span>ohn Doe</div>
+                    </div>
+                    <div class="test_saying">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur, quidem facere reiciendis in doloribus aliquam eveniet illum alias est quibusdam distinctio liber</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <section class="about" id="about">
+        <div class="title">
+            <h2><span>A</span>bout Us</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, dolore.</p>
+        </div>
+
+
+        <div class="about_row">
+            <div class="about_col">
+
+                <div class="about_card">
+                    <div class="about_front">
+                        <img src="assets/Built/model.jpg" alt="">
+                    </div>
+                    <div class="about_back">
+                        <div class="about_details">
+                            <h2>John Doe<br/><span>Senior Developer</span></h2>
+                            <div class="about_social-icon">
+                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about_card">
+                    <div class="about_front">
+                        <img src="assets/Built/testi2.jpg" alt="">
+                    </div>
+                    <div class="about_back">
+                        <div class="about_details">
+                            <h2>John Doe<br/><span>Senior Developer</span></h2>
+                            <div class="about_social-icon">
+                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about_card">
+                    <div class="about_front">
+                        <img src="assets/Built/model3.jpg" alt="">
+                    </div>
+                    <div class="about_back">
+                        <div class="about_details">
+                            <h2>John Doe<br/><span>Senior Developer</span></h2>
+                            <div class="about_social-icon">
+                                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+    </section>
+    <div class="contact_title" id="contact_title">
+        <h2><span>C</span>ontact Us</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, dolore.</p>
+    </div>
+    <section class="contact" id="contact">
+        
+        <form  method="post">
+            <div class="contact_form">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                <textarea name="" id="" placeholder="Complaint/Suggestion...." required></textarea>
+                <input type="submit" value="Submit" id="submit_btn">
+            </div>
+        </form>
+    </section>
+    <script>
+        window.addEventListener('scroll',function(){
+            let header = document.querySelector(".header");
+            header.classList.toggle("sticky_header",scrollY>0);
+            header.classList.toggle("animate__animated",scrollY>0);
+            header.classList.toggle("animate__fadeInDown",scrollY>0);
+
+            let overlay = document.querySelector(".overlay");
+            overlay.classList.toggle("overlay_me",scrollY>0)
+        })
+    </script>
+</body>
+</html>
